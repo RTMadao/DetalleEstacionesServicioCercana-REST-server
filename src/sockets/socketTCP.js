@@ -1,4 +1,5 @@
 const net = require('net');
+const ip = "<?php echo $_SERVER['SERVER_ADDR']; ?>"; 
 
 class socketServerTCP{
     constructor(){
@@ -17,7 +18,7 @@ class socketServerTCP{
             })
         });
          
-        server.listen(1337, '192.168.1.61'); 
+        server.listen(1337, ip); 
     } 
 
     sendMessage(message){
