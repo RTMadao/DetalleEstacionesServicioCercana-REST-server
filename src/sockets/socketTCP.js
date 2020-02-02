@@ -1,5 +1,6 @@
 const net = require('net');
-const ip = "<?php echo $_SERVER['SERVER_ADDR']; ?>"; 
+var yip2=java.net.InetAddress.getLocalHost();	
+var yip=yip2.getHostAddress();
 
 class socketServerTCP{
     constructor(){
@@ -18,7 +19,7 @@ class socketServerTCP{
             })
         });
          
-        server.listen(1337, ip); 
+        server.listen(1337, yip); 
     } 
 
     sendMessage(message){
