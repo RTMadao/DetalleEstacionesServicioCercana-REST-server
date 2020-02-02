@@ -1,6 +1,5 @@
 const net = require('net');
-var yip2=java.net.InetAddress.getLocalHost();	
-var yip=yip2.getHostAddress();
+const ip = require('ip');
 
 class socketServerTCP{
     constructor(){
@@ -19,7 +18,7 @@ class socketServerTCP{
             })
         });
          
-        server.listen(1337, yip); 
+        server.listen(1337, ip.address()); 
     } 
 
     sendMessage(message){
